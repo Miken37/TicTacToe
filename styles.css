@@ -1,6 +1,9 @@
 :root{
     --bg: slategray;
     --accent: rgb(31, 31, 77);
+    --bordersize: 5px;
+    --bordertype: solid;
+    --bglight: rgb(111, 124, 136);
 }
 
 body{
@@ -11,23 +14,111 @@ body{
 h1{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: var(--accent);
-    text-shadow:5px 2px rgb(136, 136, 136)
+    text-shadow:5px 2px rgb(136, 136, 136);
+    margin-bottom: 25px;
 }
 
-.big-container{
-    display: flex;
+h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--accent);
 }
+
+.playerTurn{
+    color: rgb(135, 201, 36); 
+}
+
+.overall-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+} 
 
 .main-container{
     display: flex;
-    border: 2px var(--accent) solid;
-    max-width: 312px;
+    max-width: 462px;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-container > div{
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    font-size: 500%;
+    color: var(--accent);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    /*Handles background image for X or O*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+    image-rendering: crisp-edges;
+}
+
+.main-container > div:hover{
+    background-color: var(--bglight);
+}
+
+.square1{
+    border-bottom: var(--bordersize) var(--accent) var(--bordertype);
+    border-right: var(--bordersize) var(--accent) var(--bordertype); 
+}
+
+
+
+.square2{
+    border-bottom: var(--bordersize) var(--accent) var(--bordertype);
+}
+
+.square3{
+    border-left: var(--bordersize) var(--accent) var(--bordertype);
+    border-bottom: var(--bordersize) var(--accent) var(--bordertype);
+}
+
+.square4{
+    border-right: var(--bordersize) var(--accent) var(--bordertype);
+    border-bottom: var(--bordersize) var(--accent) var(--bordertype);
+}
+
+.square5{
+    border-bottom: var(--bordersize) var(--accent) var(--bordertype);
+    border-right: var(--bordersize) var(--accent) var(--bordertype);
+}
+
+.square6{
+    border-bottom: var(--bordersize) var(--accent) var(--bordertype);
+}
+
+.square7{
+    border-right: var(--bordersize) var(--accent) var(--bordertype);
+}
+
+.square9{
+    border-left:var(--bordersize) var(--accent) var(--bordertype);
+}
+
+.reset{
+    margin-top: 50px;
+    width: 60px;
+    height: 30px;
     border: 2px var(--accent) solid;
-    box-shadow:5px 2px rgb(64, 64, 145)
+    background-color: var(--accent);
+    color: var(--bg);
+    font-weight: bold;
+    border-radius: 20px;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.reset:hover{
+    background-color: rgb(165, 165, 165);
+    color: black;
+    font-weight: bold;
+}
+
+.reset:active{
+    transform: translateX(2px);
+    transform: translateY(2px);
 }
