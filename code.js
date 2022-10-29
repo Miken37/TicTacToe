@@ -23,13 +23,20 @@ function playerCheck() {
     };
 }
 
+let playerOneScore = document.querySelector(".playerOneScore");
+let scoreNumOne = 0;
+let playerTwoScore = document.querySelector(".playerTwoScore");
+let scoreNumTwo = 0;
+
 function winEffect(winner) {
     if (winner == "player1"){
         gameOn = false;
-        console.log("Player 1 Wins");
+        scoreNumOne+=1;
+        playerOneScore.innerHTML = scoreNumOne;
     } else{
         gameOn = false;
-        console.log("Player 2 Wins");
+        scoreNumTwo+=1;
+        playerTwoScore.innerHTML = scoreNumTwo;
     }
 }
 let squareOne = document.querySelector(".square1");
