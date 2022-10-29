@@ -156,8 +156,10 @@ function resetGame(){
 if (gameOn){
     squareTest.forEach((element) => {
         element.addEventListener("click", () => {
-            element.style.backgroundImage = playerCheck();
-            gameCheck();
+            if (element.style.backgroundImage == ""){
+                element.style.backgroundImage = playerCheck();
+                gameCheck();
+            }
         })
     })
 }
