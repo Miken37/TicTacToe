@@ -27,17 +27,23 @@ let playerOneScore = document.querySelector(".playerOneScore");
 let scoreNumOne = 0;
 let playerTwoScore = document.querySelector(".playerTwoScore");
 let scoreNumTwo = 0;
+let lastWinner = document.querySelector(".lastWin");
 
 function winEffect(winner) {
     if (winner == "player1"){
         gameOn = false;
         scoreNumOne+=1;
         playerOneScore.innerHTML = scoreNumOne;
-    } else{
+        lastWinner.innerHTML = "Player 1 Won";
+        
+    } else if (winner == "player2"){
         gameOn = false;
         scoreNumTwo+=1;
         playerTwoScore.innerHTML = scoreNumTwo;
+        lastWinner.innerHTML = "Player 2 Won";
     }
+    resetGame();
+    
 }
 let squareOne = document.querySelector(".square1");
 let squareTwo = document.querySelector(".square2");
@@ -138,6 +144,15 @@ function gameCheck(){       //Inelegant way of mapping out 3 in a row for each d
     }
 }
 
+function resetGame(){
+    board.forEach((element) => {
+        element.style.backgroundImage = '';
+        playerOne = true;
+        currentPlayer.style.color = "rgb(135, 201, 36)";
+        currentPlayer.innerHTML = "Player One";
+    })
+}
+
 if (gameOn){
     squareTest.forEach((element) => {
         element.addEventListener("click", () => {
@@ -149,13 +164,10 @@ if (gameOn){
 
 
 resetButton.addEventListener("click", () =>{
-    board.forEach((element) => {
-        element.style.backgroundImage = '';
-        playerOne = true;
-        currentPlayer.style.color = "rgb(135, 201, 36)";
-        currentPlayer.innerHTML = "Player One";
-    })
+    lastWinner.innerHTML = "Game was reset with no winner";
+    resetGame();
 })
+
 
 
 
